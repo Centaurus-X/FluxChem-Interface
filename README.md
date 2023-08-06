@@ -7,4 +7,4 @@ The communication with the fieldbus controller runs over modbus tcp, for this th
 This allows remote control and configuration of a system via the web browser.
 
 ## 
-Screenshot 2023-03-28 at 02-14-13 Websocket Project.jpg
+
