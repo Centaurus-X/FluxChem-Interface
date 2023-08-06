@@ -4,7 +4,7 @@
 # Controling a PLC over Ethernet TCP/IP
 # Free to use with 'The MIT License' (Massachusetts Institute of Technology)
 # Autor: Philipp Niedermeier
-# Contact: philipp.niedermeier@stud.th-rosenheim.de
+# Contact: philipp.niedermeier@******.de
 # GitHub: 
 #
 
