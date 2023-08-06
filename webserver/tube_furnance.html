@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8"/>
+	<title>Websocket Project</title>
+  <link href="favicon.png" rel="icon" type="image/png" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+  
+  <script src="d3.v6.min.js"></script>
+
+  <script src="clock/snap.svg-min.js"></script>
+  <script src="clock/clock.js"></script>
+  <!-- HTML-Kommentar -->
+</head>
+
+<body>
+
+  <div id="right"></div>
+
+  <div id="top">
+		<div id="top-text">WebSocket Application</div>
+	</div>
+
+  <div id="bottom">
+    <button id="bottom-button">contact</button>
+  </div>
+
+	<div id="left">
+		<img id="logo" src="BEE.png" alt="Logo">
+
+    <a href="index.html">
+      <button id="left-button">Dashboard</button>
+    </a>
+
+    <div class="clock-div">
+      <button id="toggleButton" onmousedown="showClock()" onmouseup="hideClock()">Toggle Clock</button>
+    </div>
+
+
+
+    <!-- HTML-Kommentar -->
+
+    <!--
+    <div class="button-group">
+      <button id="button">Button 1</button>
+      <button id="button">Button 2</button>
+    </div>
+    -->
+
+    <!-- HTML-Kommentar -->
+
+
+    <!-- Siedebars Settings -->
+
+
+    <div class="toggel-wrapper">
+      <button class="toggel-btn1" onclick="settings_temp()">Settings Temp</button>
+      <div class="toggel-content1" id="toggelContent1">  <!-- Btn ID -->
+        <h3>Control Temperature</h3>
+        <div class="input-wrapper">
+          <input type="text" class="toggel-input" id="input_heating_temp" placeholder="Heating_Mantle_Temperature">
+          <button class="submit-button" onclick="submitHeatingTemp()">Submit </button>
+        </div>
+
+        <div class="input-wrapper">
+          <input type="text" class="toggel-input" id="input_pre_heating_temp" placeholder="Pre_Heating_Temperature">
+          <button class="submit-button" onclick="submitPreHeatingTemp()">Submit </button>
+        </div>
+
+        <button class="toggel-button" onclick=" heating_mantle_on()">Heating</button>
+        <button class="toggel-button" onclick=" heating_mantle_on()">Pre_Heating</button>
+
+        <div class="toggel-output" id="mantle_temp">Heating_Mantle_Temperature: </div>
+        <div class="toggel-output" id="pre_heater_temp">Heating_Mantle_Temperature: </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="toggel-wrapper">
+      <button class="toggel-btn2" onclick="settings_feed()">Settings Feed</button>
+      <div class="toggel-content2" id="toggelContent2">
+        <h3>Control Feed</h3>
+        <div class="input-wrapper">
+          <input type="text" class="toggel-input" id="input_pump_interval" placeholder="pump_interval">
+          <button class="submit-button" onclick="submitPump_Intervall()">Submit </button>
+        </div>
+
+        <div class="input-wrapper">
+          <input type="text" class="toggel-input" id="input_pump_power" placeholder="pump_power">
+          <button class="submit-button" onclick="submitPump_Power()">Submit </button>
+        </div>
+
+        <div class="input-wrapper">
+          <input type="text" class="toggel-input" id="input_feed_level" placeholder="feed_level">
+          <button class="submit-button" onclick="submitFeed_Level()">Submit </button>
+        </div>
+
+        <div class="input-wrapper">
+          <input type="text" class="toggel-input" id="input_feed_temp" placeholder="feed_temp">
+          <button class="submit-button" onclick="submitFeed_Temp()">Submit </button>
+        </div>
+
+        <button class="toggel-button" onclick="relais3_on()">Feed Pump</button>
+        <button class="toggel-button" onclick="relais3_on()">???</button>
+
+        <div class="toggel-output" id="feed_temp">Feed Teperature: </div>
+        <div class="toggel-output" id="feed_interval">Feed Interval: </div>
+        <div class="toggel-output" id="feed_level">Feed Level: </div>
+
+
+      </div>
+    </div>
+
+    
+
+    <div class="toggel-wrapper">
+      <button class="toggel-btn2" onclick="settings_gas()">Settings Gas</button>
+      <div class="toggel-content3" id="toggelContent3">
+        <h3>Control Gas</h3>
+        <div class="input-wrapper">
+          <input type="text" class="toggel-input" id="input_gas_pressure" placeholder="gas_pressure">
+          <button class="submit-button" onclick="submitGas_Pressure()">Submit </button>
+        </div>
+
+        <div class="input-wrapper">
+          <input type="text" class="toggel-input" id="input_gas_flow" placeholder="gas_flow">
+          <button class="submit-button" onclick="submitGas_Flow()">Submit </button>
+        </div>
+
+        <button class="toggel-button" onclick="relais2_on()">Gas Valve</button>
+
+        <div class="toggel-output" id="gas_pressure">Gas Pressure: </div>
+        <div class="toggel-output" id="gas_flow">Gas Flow: </div>
+
+      
+      </div>
+    </div>
+
+
+
+    <div class="toggel-wrapper">
+      <button class="toggel-btn2" onclick="settings_cooling()">Settings Cooling</button>
+      <div class="toggel-content3" id="toggelContent4">
+        <h3>Control Cooling</h3>
+        <div class="input-wrapper">
+          <input type="text" class="toggel-input" id="input_min_cooling_temp" placeholder="min_cooling_temp">
+          <button class="submit-button" onclick="submitMin_Cooling_Temp()">Submit </button>
+        </div>
+
+        <div class="input-wrapper">
+          <input type="text" class="toggel-input" id="input_recuperator_vent" placeholder="recuperator_vent">
+          <button class="submit-button" onclick="submitRecuperator_Vent()">Submit </button>
+        </div>
+
+        <button class="toggel-button" onclick="relais1_on()">Cooling</button>
+
+        <div class="toggel-output" id="water_temperature">Water Temperature: </div>
+        <div class="toggel-output" id="water_flow">Water Flow: </div>
+        <div class="toggel-output" id="recuperator_vent">Recuperator Vent RPM: </div>
+
+      
+      </div>
+    </div>
+
+
+  </div>
+
+
+    <!-- Content on Top -->
+
+    <!-- Tab Menue -->
+
+  <div id="content-wrapper">
+    <div id="content">
+      <img id="wago" src="wago.png" alt="wago"> 
+      <h1>Control Management</h1>
+        <p></p>
+        <div class="tabs">
+          <button class="tablink" onclick="openTab(event, 'Tab1')">Process View</button>
+          <button class="tablink" onclick="openTab(event, 'Tab2')">Data Visualization</button>
+          <button class="tablink" onclick="openTab(event, 'Tab3')">Backend Data</button>
+        </div>
+        <p></p>
+    </div>
+  </div>
+
+
+  <!-- Tab 1 -->
+
+  <div id="Tab1" class="tabcontent">
+    <h2></h2>
+    <p>
+
+
+  <!-- State visualization picture and buttons -->
+
+
+    <div class="image-wrapper">
+
+      <img id="myImage1" src="RI.png" alt="Plant Image">
+      <a href="#" class="button1" onClick="relais1_on();">Cooling</a>
+      <a href="#" class="button2" onClick="relais2_on();">Gas Valve</a>
+      <a href="#" class="button3" onClick="relais3_on();">Feed</a>
+      <a href="#" class="button4" onClick="heating_mantle_on();">Heating</a>
+    <!--  <a href="#" class="button5" onClick="heating_mantle_on();">PreHeating</a> -->
+      <div class="box1" id="myBox1">Waiting for Data...</div>
+      <div class="box2" id="myBox2">Waiting for Data...</div>
+      <div class="box3" id="myBox3">Waiting for Data...</div>
+      <div class="box4" id="myBox4">Waiting for Data...</div>
+    <!--  <div class="box5" id="myBox5">Waiting for Data...</div> -->
+      <input type="text" id="input-field" placeholder="Enter Temperature...">
+      <input type="submit" id="submit-button" value="Submit">
+      <input type="text" id="input-field2" placeholder="Enter Temperature...">
+      <input type="submit" id="submit-button2" value="Submit">
+
+  </div>
+
+
+    </p>
+  </div>
+
+
+
+  <!-- Tab 2 -->
+  
+  <div id="Tab2" class="tabcontent">
+    <h2></h2>
+    <p>
+
+
+    <div class="top-row">
+      <div class="chart-container" id="mantleChartContainer" data-chart-id="mantle">
+        <canvas id="mantleChart"></canvas>
+      </div>
+      <div class="chart-container" id="preHeatingChartContainer" data-chart-id="preHeating">
+        <canvas id="preHeatingChart"></canvas>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div class="chart-container" id="feedChartContainer" data-chart-id="feed">
+        <canvas id="feedChart"></canvas>
+      </div>
+      <div class="chart-container" id="coolingChartContainer" data-chart-id="cooling">
+        <canvas id="coolingChart"></canvas>
+      </div>
+    </div>
+
+
+    </p>
+  </div>
+
+
+
+
+
+
+  <!-- Tab 3 -->
+  
+  <div id="Tab3" class="tabcontent">
+    <h2></h2>
+    <p></p>
+  
+    <div class="info-table-wrapper">
+      <table id="infoTable">
+        <tr>
+          <th>Process Name</th>
+          <th>CPU Usage</th>
+        </tr>
+        <tr>
+          <td id="pName1">Process 1 -- IO-Handler 1</td>
+          <td id="cpuUse1">-</td>
+        </tr>
+
+        <tr>
+          <td id="pName2">Process 2 -- IO-Handler 2</td>
+          <td id="cpuUse2">-</td>
+        </tr>
+
+        <tr>
+          <td id="pName3">Process 3 -- Address-Handler</td>
+          <td id="cpuUse3">-</td>
+        </tr>
+
+        <tr>
+          <td id="pName4">Process 4 -- DataBase-Handler 1</td>
+          <td id="cpuUse4">-</td>
+        </tr>
+
+        <tr>
+          <td id="pName5">Process 5 -- DataBase-Handler 2</td>
+          <td id="cpuUse5">-</td>
+        </tr>
+
+        <td id="pName6">Process 6 -- Modbus-Handler 1</td>
+        <td id="cpuUse6">-</td>
+      </tr>
+
+      <tr>
+        <td id="pName7">Process 7 -- Modbus-Handler 2</td>
+        <td id="cpuUse7">-</td>
+      </tr>
+
+      <tr>
+        <td id="pName8">Process 8 -- Control-Handler 1</td>
+        <td id="cpuUse8">-</td>
+      </tr>
+
+      <tr>
+        <td id="pName9">Process 9 -- Control-Handler 2</td>
+        <td id="cpuUse9">-</td>
+      </tr>
+
+      <tr>
+        <td id="pName10">Process 10 -- Control-Handler 3</td>
+        <td id="cpuUse10">-</td>
+      </tr>
+      
+      </table>
+    </div>
+
+
+  </div>
+
+
+
+<!--
+
+    <div id="plant-img">
+      <img class="plant-img" id="myImage0" src="RI.png" alt="Plant Image" />
+      <img class="plant-img" id="myImage0" src="RI_hot5_cool_gas.png" alt="Plant Image" />
+    </div>
+
+-->
+
+
+
+
+    <!-- Toggel Websocket -->
+
+
+  <div class="wrapper">
+    <div class="toggle-container">
+      <button class="toggle-btn" onclick="toggle(event)">Toggle Websocket</button>
+      <div class="toggle-content">
+        <h2 class="toggle">Websocket Output</h2>
+        <form name="myform">
+          <p>
+            <textarea name="text" rows="10" cols="60"></textarea>
+          </p>
+          <p>
+            <input type="button" value="Connect" onClick="connect();">
+            <input type="button" value="Disconnect" onClick="disconnect();">
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+    <!-- HTML-Kommentar -->
+
+
+    <!-- Clock -->
+  
+    <div id="clockWrapper" style="display: none;">
+      <svg id="clockUK"></svg>
+    </div>
+    
+    
+  
+
+
+    <!-- HTML-Kommentar -->
+
+
+
+
+
+
+  <!--
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  -->
+
+
+
+
+  <script src="chart_js/chart.js"></script>
+
+  <script language="javascript" type="text/javascript" src="websocket_client.js" charset="utf-8"></script>
+  <script src="clock/start_clock.js"></script>
+
+</body>
+</html>
