@@ -8,4 +8,4 @@ This allows remote control and configuration of a system via the web browser.
 
 ## 
 
-Screenshot.png
+![Screenshot](https://github.com/Centaurus-X/automatization_web_api_python/assets/141531206/d21cf8b5-30e4-412d-b161-912e9332d537)
