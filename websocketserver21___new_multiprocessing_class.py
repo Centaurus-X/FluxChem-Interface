@@ -642,7 +642,7 @@ class MySQLDatabase:
         self.queue_tempctr2 = queue_tempctr2
         self.host = '192.168.0.17'
         self.user = 'root'
-        self.password = '#q23LopaQ7'
+        self.password = '#******'
         self.database = 'websocket_database'
         self.connection = None
         self.cursor = None
