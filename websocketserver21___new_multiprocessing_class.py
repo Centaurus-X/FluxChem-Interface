@@ -5,7 +5,7 @@
 # Free to use with 'The MIT License' (Massachusetts Institute of Technology)
 # Autor: Philipp Niedermeier
 # Contact: philipp.niedermeier@******.de
-# GitHub: 
+# GitHub: https://github.com/Centaurus-X/automatization_web_api_python
 #
 
 from colorama import *
