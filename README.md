@@ -1,4 +1,4 @@
-# automatization_web_api_python
+# Automation of a chemical process using a web interface & python server application
 
 This python server program allows to control a fieldbus controller via websocket (simplewebsocketserver), a mysql database connection is used for further state storage.
 
