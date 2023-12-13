@@ -14,3 +14,4 @@ This allows remote control and configuration of a system via the web browser.
 
 
 <meta name="google-site-verification" content="wWXBoPBgsyesGIWnaHmcu3RLDOQZCh06if25r_USuIo" />
+name="google-site-verification" content="wWXBoPBgsyesGIWnaHmcu3RLDOQZCh06if25r_USuIo"
