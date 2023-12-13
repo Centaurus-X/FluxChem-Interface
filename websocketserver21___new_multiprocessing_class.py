@@ -1,7 +1,7 @@
 #
 # Websocket_Server_Python_Script
 #
-# Controling a PLC over Ethernet TCP/IP
+# Control of a PLC or a fieldbus controller via Ethernet TCP/IP
 # Free to use with 'The MIT License' (Massachusetts Institute of Technology)
 # Autor: Philipp Niedermeier
 # Contact: philipp.niedermeier@******.de
