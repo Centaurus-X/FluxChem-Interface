@@ -4,7 +4,7 @@
 # Control of a PLC or a fieldbus controller via Ethernet TCP/IP
 # Free to use with 'The MIT License' (Massachusetts Institute of Technology)
 # Autor: Philipp Niedermeier
-# Contact: philipp.niedermeier@stud.th-rosenheim.de
+# Contact: philipp.niedermeier@stud.th-rosenheim.de | philipp.niedermeier@posteo.de
 # GitHub: https://github.com/Centaurus-X/automatization_web_api_python
 #
 
