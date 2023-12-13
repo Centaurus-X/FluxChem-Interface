@@ -13,13 +13,5 @@ This allows remote control and configuration of a system via the web browser.
 
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="google-site-verification" content="wWXBoPBgsyesGIWnaHmcu3RLDOQZCh06if25r_USuIo" />
-</head>
-<body>
-    <!-- Hier können Inhalte hinzugefügt werden -->
-</body>
-</html>
+<meta name="google-site-verification" content="wWXBoPBgsyesGIWnaHmcu3RLDOQZCh06if25r_USuIo" />
 
